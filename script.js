@@ -1,49 +1,62 @@
-// Menu Hamburger Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
+const contactForm = document.getElementById('contact-form');
+const modal = document.getElementById('success-modal');
 
-// Toggle menu on hamburger click
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when a link is clicked
-navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-container')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+function openModal() {
+    if (modal) {
+        modal.style.display = 'flex';
     }
-});
+}
 
-// Formspree initialization
-window.formspree = window.formspree || function () { 
-  (formspree.q = formspree.q || []).push(arguments); 
-};
+function closeModal() {
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
 
-formspree('initForm', { 
-  formElement: '#contact-form', 
-  formId: 'mgobzdaz' 
-});
-
-// Pop-up joli après envoi
-document.getElementById('contact-form').addEventListener('formspree:submit', function(e) {
-    Swal.fire({
-        title: '✅ Message reçu!',
-        text: 'Merci, je vous recontacterai très rapidement.',
-        icon: 'success',
-        confirmButtonText: 'Fermer',
-        confirmButtonColor: '#173a30',
-        background: '#F5EFE7',
-        color: '#1F2933'
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-    document.getElementById('contact-form').reset();
-});
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+if (hamburger && navMenu) {
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.nav-container')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
+
+        event.preventDefault();
+        contactForm.reset();
+        openModal();
+    });
+}
+
+if (modal) {
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+}
+
+window.closeModal = closeModal;
