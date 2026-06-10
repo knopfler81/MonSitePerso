@@ -238,6 +238,16 @@ h1, h2, h3, h4, h5, h6 {
     .hero-left h1 {
         font-size: 2rem;
     }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Features Section */
@@ -300,8 +310,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
 }
 
 .service-card {
@@ -310,6 +321,9 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
     border-left: 4px solid var(--accent);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -427,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact Section */
 .contact {
     padding: 4rem 1.5rem;
-    background-color: var(--surface);
+    background-color: var(--background);
     text-align: center;
 }
 
@@ -496,6 +510,78 @@ h1, h2, h3, h4, h5, h6 {
 .modal-content p {
     color: var(--text-light);
     margin-bottom: 1.5rem;
+}
+
+.why-section {
+    padding: 4rem 2rem;
+    background-color: var(--surface);
+}
+
+.why-section h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-item {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(23, 58, 48, 0.1);
+}
+
+.why-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.why-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.why-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section {
+        padding: 3rem 1rem;
+    }
+
+    .why-section h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
