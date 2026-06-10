@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NellyFabrik - Création de Sites Vitrines</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-nelly">NELLY</span><span class="logo-fabrik">FABRIK</span>
+            </a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#accueil">ACCUEIL</a></li>
+                <li><a href="#prestations">PRESTATIONS</a></li>
+                <li><a href="#realisations">RÉALISATIONS</a></li>
+                <li><a href="#apropos">À PROPOS</a></li>
+                <li><a href="#contact" class="contact-link">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-left">
+            <p class="hero-label">CRÉATION DE SITES VITRINES</p>
+            <h1>Un site solide et efficace pour développer votre <span class="highlight">activité locale</span>.</h1>
+            <p class="hero-description">Des sites vitrines fiables, simples à gérer et pensés pour vos clients.</p>
+            <button class="cta">DÉCOUVRIR MES RÉALISATIONS</button>
+        </div>
+        <div class="hero-right">
+            <img src="images/landing_1.png" alt="Portfolio NellyFabrik - Exemple de site"
+ class="hero-image">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+<section class="features">
+    <div class="features-grid">
+        <div class="feature-item">
+            <img src="icones/profile.svg" alt="À votre image" class="feature-icon">
+            <h3>À VOTRE IMAGE</h3>
+            <p>Un site qui reflète votre savoir-faire et vos valeurs.</p>
+        </div>
+        <div class="feature-item">
+            <img src="icones/screen.svg" alt="Simple à gérer" class="feature-icon">
+            <h3>SIMPLE À GÉRER</h3>
+            <p>Vous restez autonome facilement au quotidien.</p>
+        </div>
+        <div class="feature-item">
+            <img src="icones/clients.svg" alt="Pensé pour vos clients" class="feature-icon">
+            <h3>PENSÉ POUR VOS CLIENTS</h3>
+            <p>Navigation claire, infos accessibles, contact facile.</p>
+        </div>
+        <div class="feature-item">
+            <img src="icones/shop.svg" alt="Local et visible" class="feature-icon">
+            <h3>LOCAL & VISIBLE</h3>
+            <p>Être trouvé par vos futurs clients près de chez vous.</p>
+        </div>
+    </div>
+</section>
+    <!-- Prestations Section -->
+    <section class="services" id="prestations">
+        <div class="container">
+            <h2>CE QUE JE PROPOSE</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>CRÉATION DE SITE VITRINE</h3>
+                    <p>Un site professionnel pour entrer votre activité en ligne et convertir vos visiteurs.</p>
+                    <a href="#" class="read-more">En savoir plus →</a>
+                </div>
+                <div class="service-card">
+                    <h3>REFONTE DE SITE</h3>
+                    <p>Modernisation de votre site existant pour la rendre plus impactant et performant.</p>
+                    <a href="#" class="read-more">En savoir plus →</a>
+                </div>
+                <div class="service-card">
+                    <h3>MAINTENANCE & ÉVOLUTION</h3>
+                    <p>Mises à jour, sauvegardes et évolutions pour que votre site fonctionne toujours.</p>
+                    <a href="#" class="read-more">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations Section -->
+    <section class="examples" id="realisations">
+        <div class="container">
+            <h2>MES RÉALISATIONS</h2>
+            <p class="examples-intro">Découvrez quelques exemples de sites que j'ai créés pour des restaurants, commerces et artisans.</p>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-image" style="background: #f0f0f0;"></div>
+                    <h3>Blade Theory</h3>
+                    <p>Barbershop - Marcq-en-Baroeul</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-image" style="background: #f0f0f0;"></div>
+                    <h3>Maison Auguste</h3>
+                    <p>Caviste - Paris</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-image" style="background: #f0f0f0;"></div>
+                    <h3>Lulu à Table</h3>
+                    <p>Restaurant - Lyon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>PRÊT À DONNER PLUS DE VISIBILITÉ À VOTRE ACTIVITÉ ?</h2>
+            <p>Discutons de votre projet. Je vous propose une solution adaptée et transparente.</p>
+            <button class="cta cta-large">DÉMARRER MON PROJET</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>PARLONS DE VOTRE PROJET</h2>
+        <p>Remplissez le formulaire ci-dessous et je vous recontacterai rapidement.</p>
+        
+        <div data-fs-success style="display:none; text-align:center; color: #173a30; margin: 2rem 0;">
+            <p style="font-size: 1.2rem; font-weight: bold;">✅ Message bien reçu!</p>
+            <p>Je vous recontacterai très rapidement.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+            <input type="text" name="name" placeholder="Votre nom *" data-fs-field required>
+            <input type="email" name="email" placeholder="Votre email *" data-fs-field required>
+            <input type="tel" name="phone" placeholder="Votre téléphone *" data-fs-field required>
+            <textarea name="message" placeholder="Décrivez votre projet..." rows="6" data-fs-field required></textarea>
+            <button type="submit" class="cta cta-form" data-fs-submit-btn>ENVOYER MON PROJET</button>
+        </form>
+        <p class="form-note">Pas de spam, juste une discussion sur votre activité.</p>
+    </div>
+</section>
+
+<div id="success-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>✅ Message reçu!</h2>
+        <p>Merci, je vous recontacterai très rapidement.</p>
+        <button onclick="closeModal()" class="cta">Fermer</button>
+    </div>
+</div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NellyFabrik. Création de sites vitrines pour votre activité locale.</p>
+            <p><a href="#">Mentions légales</a> • <a href="#">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
