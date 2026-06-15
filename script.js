@@ -37,9 +37,6 @@ window.addEventListener('load', () => {
             color: '#1F2933'
         });
         
-        setTimeout(() => {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        }, 500);
         
         window.history.replaceState({}, document.title, window.location.pathname);
     }
