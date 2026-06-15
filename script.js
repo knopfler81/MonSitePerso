@@ -21,3 +21,26 @@ if (hamburger && navMenu) {
         }
     });
 }
+
+// Afficher pop-up de confirmation au retour de Basin
+window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    
+    if (params.get('success') === 'true') {
+        Swal.fire({
+            title: '✅ Message reçu!',
+            text: 'Merci, je vous recontacterai très rapidement.',
+            icon: 'success',
+            confirmButtonText: 'Fermer',
+            confirmButtonColor: '#173a30',
+            background: '#F5EFE7',
+            color: '#1F2933'
+        });
+        
+        setTimeout(() => {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+        
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+});
