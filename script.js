@@ -37,25 +37,37 @@ if (hamburger && navMenu) {
         }
     });
 }
-
 if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
-        if (!contactForm.checkValidity()) {
-            contactForm.reportValidity();
-            return;
-        }
-
         event.preventDefault();
-        contactForm.reset();
-        openModal();
-    });
-}
-
-if (modal) {
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
+        
+        const formData = new FormData(contactForm);
+        
+        fetch('https://formspree.io/f/mgobzdaz', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                Swal.fire({
+                    title: '✅ Message reçu!',
+                    text: 'Merci, je vous recontacterai très rapidement.',
+                    icon: 'success',
+                    confirmButtonText: 'Fermer',
+                    confirmButtonColor: '#173a30',
+                    background: '#F5EFE7',
+                    color: '#1F2933'
+                });
+                contactForm.reset();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Erreur lors de l\'envoi. Réessaie.');
+        });
     });
 }
 
